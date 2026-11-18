@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160f18">
+<title>A little question for Salma ♡</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+  :root{--bg:#160f18;--pink:#f2a9bb;--cream:#fff4ed;--muted:#c7aeb8;--wine:#8d3e5c}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 15%,#482638 0%,#241522 42%,#120e16 100%);color:var(--cream);font-family:'DM Sans',sans-serif;display:grid;place-items:center;padding:24px;overflow-x:hidden}
+  body:before,body:after{content:"";position:fixed;width:360px;height:360px;border:1px solid #f2a9bb18;border-radius:50%;pointer-events:none}
+  body:before{top:-220px;left:-130px;box-shadow:0 0 0 35px #f2a9bb08,0 0 0 70px #f2a9bb05}
+  body:after{bottom:-260px;right:-120px;box-shadow:0 0 0 35px #f2a9bb08,0 0 0 70px #f2a9bb05}
+  .wrap{width:min(100%,680px);position:relative;z-index:1}
+  .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:10px;color:var(--pink);text-align:center;margin-bottom:22px}
+  .panel{background:linear-gradient(145deg,#ffffff0d,#ffffff04);border:1px solid #f6c6d52b;border-radius:28px;padding:clamp(28px,7vw,62px);text-align:center;box-shadow:0 28px 90px #0006;backdrop-filter:blur(12px)}
+  .spark{font-size:25px;color:var(--pink);margin-bottom:18px}
+  h1,h2{font-family:'Playfair Display',serif;font-weight:500;line-height:1.12}
+  h1{font-size:clamp(42px,8vw,66px);margin:0 auto 15px;max-width:560px}
+  h1 em{color:var(--pink);font-weight:500}
+  .sub{color:var(--muted);font-size:14px;line-height:1.7;margin:0 auto 32px;max-width:390px}
+  .buttons{display:flex;justify-content:center;align-items:center;gap:16px;min-height:76px;position:relative}
+  button{font:600 14px 'DM Sans',sans-serif;border:0;border-radius:999px;padding:15px 30px;cursor:pointer;transition:transform .25s,background .25s,box-shadow .25s}
+  #yes{background:var(--pink);color:#351724;box-shadow:0 8px 28px #f2a9bb35;position:relative;z-index:2}
+  #yes:hover{background:#ffc3d1;transform:translateY(-2px)}
+  #no{background:#ffffff10;color:#f8dfe7;border:1px solid #ffffff2b;position:relative;z-index:3}
+  .hint{font-size:11px;color:#b99eaa;margin-top:22px;letter-spacing:.04em}
+  .hidden{display:none!important}
+  .step{animation:appear .55s ease both}
+  @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .form-panel{text-align:left}
+  .form-panel .eyebrow,.form-panel h2,.form-panel .sub{text-align:center}
+  h2{font-size:clamp(36px,7vw,50px);margin:0 0 12px}
+  .form-panel .sub{margin-bottom:28px}
+  .field{margin:18px 0}
+  label{display:block;font-size:12px;color:#f0c5d1;letter-spacing:.06em;margin-bottom:9px}
+  input,select,textarea{width:100%;background:#160f18a8;border:1px solid #f2a9bb45;border-radius:13px;padding:14px 15px;color:var(--cream);font:14px 'DM Sans',sans-serif;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px #f2a9bb16}
+  select option{background:#241522;color:white}
+  textarea{min-height:100px;resize:vertical}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .submit{width:100%;margin-top:12px;background:var(--pink);color:#351724;padding:16px}
+  .submit:hover{background:#ffc3d1;transform:translateY(-1px)}
+  .back{display:block;margin:18px auto 0;background:transparent;color:var(--muted);padding:8px 14px;font-size:12px}
+  .modal{position:fixed;inset:0;background:#09070bdc;display:grid;place-items:center;padding:20px;z-index:10;backdrop-filter:blur(9px)}
+  .letter{width:min(100%,520px);background:#fff5ef;color:#4a2937;border-radius:8px;padding:clamp(30px,7vw,58px);text-align:left;box-shadow:0 30px 100px #0009;position:relative;animation:appear .5s ease both}
+  .letter:before{content:"";position:absolute;inset:10px;border:1px solid #c9879b66;pointer-events:none}
+  .letter .tiny{text-align:center;color:#a45c76;letter-spacing:.25em;text-transform:uppercase;font-size:9px;margin-bottom:30px}
+  .letter h2{font-size:clamp(30px,6vw,42px);margin-bottom:22px}
+  .letter p{font:16px/1.8 'Playfair Display',serif}
+  .letter .sign{font:italic 19px 'Playfair Display',serif;color:#a45c76;margin-top:30px}
+  .share-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px 0 4px;position:relative;z-index:1}
+  .share{background:#8d3e5c;color:white;padding:11px 16px;font-size:12px}
+  .share.secondary{background:transparent;color:#8d3e5c;border:1px solid #c9879b}
+  .share-note{font:12px/1.5 'DM Sans',sans-serif;text-align:center;color:#8d3e5c;min-height:18px;margin:10px 0 0}
+  .close{display:block;margin:24px auto 0;background:#8d3e5c;color:white;position:relative;z-index:1}
+  .footer{text-align:center;color:#a98c9a;font-size:10px;margin-top:18px;letter-spacing:.12em}
+  @media(max-width:480px){.two{grid-template-columns:1fr}.panel{border-radius:22px}.buttons{gap:10px}button{padding:14px 25px}}
+  @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="panel step" id="question">
+    <div class="eyebrow">a very important question</div>
+    <div class="spark">✧</div>
+    <h1>Salma, will you<br><em>go out with me?</em></h1>
+    <p class="sub">I have a little question… and hopefully, a date to plan.</p>
+    <div class="buttons" id="buttonArea">
+      <button id="yes" type="button">Yes ♡</button>
+      <button id="no" type="button">No</button>
+    </div>
+    <p class="hint">catch “no” if you can</p>
+  </section>
+
+  <section class="panel form-panel step hidden" id="planner">
+    <div class="eyebrow">well, look at that ♡</div>
+    <h2>Yesss, it's a date!</h2>
+    <p class="sub">Now let's make it official. You get to choose how our little date goes.</p>
+    <form id="dateForm">
+      <div class="two">
+        <div class="field">
+          <label for="date">WHICH DAY?</label>
+          <input id="date" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="time">WHAT TIME?</label>
+          <input id="time" name="time" type="time" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="plan">WHAT'S THE PLAN?</label>
+        <select id="plan" name="plan" required>
+          <option value="" disabled selected>Choose our date idea…</option>
+          <option>Coffee</option>
+          <option>Movie</option>
+          <option>Dinner</option>
+          <option>Walk in the park</option>
+          <option>Drinks</option>
+          <option>Surprise me</option>
+        </select>
+      </div>
+      <div class="field hidden" id="surpriseField">
+        <label for="surprise">TELL ME WHAT YOU HAVE IN MIND</label>
+        <textarea id="surprise" name="surprise" placeholder="Your secret date idea goes here…"></textarea>
+      </div>
+      <button class="submit" type="submit">Submit our date ♡</button>
+    </form>
+    <button class="back" id="back" type="button">← Wait, let me think</button>
+  </section>
+  <div class="footer">MADE WITH A LITTLE EXTRA LOVE</div>
+</main>
+
+<div class="modal hidden" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+  <article class="letter">
+    <div class="tiny">a little note for you</div>
+    <h2 id="letterTitle">Dear skr7,</h2>
+    <p>sooo… it's official. <strong>it's a date!!</strong> 🥹💗</p>
+    <p id="dateSummary"></p>
+    <p>i promise good vibes, terrible jokes, and the very best of me. ☕✨</p>
+    <p>and honestly? i already can't stop smiling. can't wait to see you. 🌷</p>
+    <p class="sign">yours (a little nervously, but very happily),<br><strong>Namoussa ♡</strong></p>
+    <div class="share-actions">
+      <button class="share" id="shareLetter" type="button">Share the letter ↗</button>
+      <button class="share secondary" id="emailLetter" type="button">Send by email</button>
+      <button class="share secondary" id="copyLetter" type="button">Copy letter</button>
+    </div>
+    <p class="share-note" id="shareNote" aria-live="polite"></p>
+    <button class="close" id="closeLetter" type="button">Our date is official ♡</button>
+  </article>
+</div>
+
+<script>
+const question = document.getElementById('question');
+const planner = document.getElementById('planner');
+const yes = document.getElementById('yes');
+const no = document.getElementById('no');
+const area = document.getElementById('buttonArea');
+const plan = document.getElementById('plan');
+const surpriseField = document.getElementById('surpriseField');
+const surprise = document.getElementById('surprise');
+const modal = document.getElementById('letterModal');
+let yesScale = 1;
+
+function moveNo(){
+  const areaRect = area.getBoundingClientRect();
+  const noRect = no.getBoundingClientRect();
+  const maxX = Math.max(0, areaRect.width - noRect.width);
+  const maxY = 95;
+  const x = Math.random() * maxX - maxX/2;
+  const y = (Math.random() * maxY) - maxY/2;
+  no.style.position = 'absolute';
+  no.style.left = `calc(50% + ${x}px)`;
+  no.style.top = `calc(50% + ${y}px)`;
+  no.style.transform = 'translate(-50%,-50%)';
+  yesScale = Math.min(yesScale + 0.13, 2.15);
+  yes.style.transform = `scale(${yesScale})`;
+}
+no.addEventListener('pointerenter', moveNo);
+no.addEventListener('click', moveNo);
+no.addEventListener('touchstart', e => { e.preventDefault(); moveNo(); }, {passive:false});
+yes.addEventListener('click', () => {
+  question.classList.add('hidden');
+  planner.classList.remove('hidden');
+  planner.scrollIntoView({behavior:'smooth',block:'center'});
+});
+document.getElementById('back').addEventListener('click', () => {
+  planner.classList.add('hidden');
+  question.classList.remove('hidden');
+});
+plan.addEventListener('change', () => {
+  const show = plan.value === 'Surprise me';
+  surpriseField.classList.toggle('hidden', !show);
+  surprise.required = show;
+});
+document.getElementById('dateForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const data = new FormData(e.currentTarget);
+  const chosenDate = data.get('date');
+  const chosenTime = data.get('time');
+  const chosenPlan = data.get('plan');
+  const custom = (data.get('surprise') || '').trim();
+  const formattedDate = new Date(chosenDate + 'T12:00:00').toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  const displayPlan = chosenPlan === 'Surprise me' && custom ? `surprise me — ${custom}` : chosenPlan.toLowerCase();
+  document.getElementById('dateSummary').textContent = `lets meet ${formattedDate}, at ${chosenTime}, for ${displayPlan}`;
+  modal.classList.remove('hidden');
+});
+function getLetterText(){
+  return `Dear skr7, 💌\\n\\nsooo… it's official. it's a date!! 🥹💗\\n\\n${document.getElementById('dateSummary').textContent}\\n\\ni promise good vibes, terrible jokes, and the very best of me. ☕✨\\n\\nand honestly? i already can't stop smiling. can't wait to see you. 🌷\\n\\nyours (a little nervously, but very happily),\\nNamoussa ♡`;
+}
+document.getElementById('shareLetter').addEventListener('click', async () => {
+  const text = getLetterText();
+  if (navigator.share) {
+    try {
+      await navigator.share({title:"It's a date ♡", text});
+      document.getElementById('shareNote').textContent = 'Choose an app from your share menu ♡';
+    } catch (err) {
+      if (err.name !== 'AbortError') document.getElementById('shareNote').textContent = 'Sharing was unavailable. Try Copy letter instead.';
+    }
+  } else {
+    try {
+      await navigator.clipboard.writeText(text);
+      document.getElementById('shareNote').textContent = 'Letter copied! You can paste it into Instagram, WhatsApp, or anywhere.';
+    } catch {
+      document.getElementById('shareNote').textContent = 'Use Copy letter or Send by email to share your note.';
+    }
+  }
+});
+document.getElementById('emailLetter').addEventListener('click', () => {
+  const subject = encodeURIComponent("It's a date ♡");
+  const body = encodeURIComponent(getLetterText());
+  window.location.href = `mailto:?subject=${subject}&body=${body}`;
+});
+document.getElementById('copyLetter').addEventListener('click', async () => {
+  const note = document.getElementById('shareNote');
+  try {
+    await navigator.clipboard.writeText(getLetterText());
+    note.textContent = 'Copied! Paste it into Instagram, WhatsApp, or anywhere you like ♡';
+  } catch {
+    note.textContent = 'Copying is not supported in this browser. Try Share the letter.';
+  }
+});
+document.getElementById('closeLetter').addEventListener('click', () => modal.classList.add('hidden'));
+modal.addEventListener('click', e => { if(e.target === modal) modal.classList.add('hidden'); });
+const today = new Date();
+const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.getElementById('date').min = localToday;
+</script>
+</body>
+</html>
